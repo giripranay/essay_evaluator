@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Essay History{% endblock %}
+
+{% block content %}
+  <h1>Essay History</h1>
+  <ul>
+    {% for essay in essays %}
+      <li>
+        <h2>{{ essay.title }}</h2>
+        <p>{{ essay.body|truncatewords:50 }}</p>
+        <p>Feedback: {{ essay.feedback }}</p>
+        <p>Submitted on: {{ essay.created_at }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
